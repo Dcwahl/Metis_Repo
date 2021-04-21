@@ -1,25 +1,36 @@
-### Project Proposal Template
-
 #### Question/need:
 * What is the framing question of your analysis, or the purpose of the model/system you plan to build? 
-It is currently August, 2020 and you are a company specialising in WFH/tele-commuting office furniture looking to expand into the NYC market. To get an understanding of possible demand as well as what markets/demographics to advertise to specifically, you try to get an understanding of how many/who in the NYC area are WFH/telecommuting.
+Scenario: It is currently mid-2020 and you are a company specialising in WFH/tele-commuting/home-office furniture looking to expand into the NYC market. To get an understanding of possible demand as well as what markets/demographics to advertise to specifically, you try to get an understanding of how many/who in the NYC area are WFH/telecommuting.
+
 * Who benefits from exploring this question or building this model/system?
+Me and my company of standing desks 
 
 #### Data Description:
 * What dataset(s) do you plan to use, and how will you obtain the data?
 MTA turnstile data (provided)
-Station:location data (pendingish, note to self I have a handy enough of a link in google doc)
+Station:location data (https://data.cityofnewyork.us/Transportation/Subway-Stations/arq3-7z49)
 Income by location in NYC (pending)
 
 * What is an individual sample/unit of analysis in this project? What characteristics/features do you expect to work with? 
+	Data that MTA provides sort of has a granularity of Location:Time
+		(Location really being a combination of the C/A,Unit,SCP,Station columns)
+		Additionally, split into (generally) 4 hour chunks
+	Of particular interest in my case is the Entries + Exits column which give a look at the number of people passing through a location over a time period.
+
 
 * If modeling, what will you predict as your target?
 N/A- analysis project
 
 #### Tools:
 * How do you intend to meet the tools requirement of the project? 
+MTA raw data -> SQL db
+Python for some of the geographic data models (likely geopy) as well as for visualisation
+Pandas for data exploration/clean-up
+
 
 * Are you planning in advance to need or use additional tools beyond those required?
+	Not sure this strictly counts but using geopy or potentially folium python packages
 
 #### MVP Goal:
 * What would a [minimum viable product (MVP)](./mvp.md) look like for this project?
+	At the absolute least, I would like to be able to look at changes in commutership by area/zip-code.
